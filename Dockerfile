@@ -8,7 +8,7 @@
 #
 # Package stage
 #
-FROM openjdk:17.0.6-jdk-zulu
+FROM openjdk:openjdk-17-jdk-headless
 COPY --from=build /target/demo-0.0.1-SNAPSHOT.jar demo.jar
 # ENV PORT=8080
 EXPOSE 8080
