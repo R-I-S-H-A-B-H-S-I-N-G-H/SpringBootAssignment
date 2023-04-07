@@ -1,16 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://containers-us-west-185.railway.app:5566/railway
-    username: postgres
-    password: dBIylFbhxNhw0r9ECr4Z
-    driver-class-name: com.mysql.cj.jdbc.Driver
-  #hibernate configuration
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL57Dialect
-  main:
-    allow-bean-definition-overriding: true
+    url: jdbc:postgresql://${PGHOST}:${PGPORT}/${PGDATABASE}
+    username: ${PGUSER}
+    password: ${PGPASSWORD}
+    name: spring-app
