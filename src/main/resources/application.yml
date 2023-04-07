@@ -1,6 +1,22 @@
+server:
+  port: 8080
+
+  #database configuration : mysql
 spring:
   datasource:
-    url: jdbc:postgresql://${PGHOST}:${PGPORT}/${PGDATABASE}
-    username: ${PGUSER}
-    password: ${PGPASSWORD}
-    name: spring-app
+    #    url: jdbc:mysql://localhost:3306/assignment?jdbcCompliantTruncation=false
+    url: jdbc:mysql://root:cE7riYqCEm5TLkpybVn4@containers-us-west-169.railway.app:7553/railway
+
+    username: root
+    password: cE7riYqCEm5TLkpybVn4
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  #hibernate configuration
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL57Dialect
+  main:
+    allow-bean-definition-overriding: true
